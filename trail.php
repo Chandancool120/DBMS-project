@@ -10,5 +10,6 @@ else
 
       { 
       	echo "The connection failed";
+      	echo "hi asshole"
       	die( 'cannot connect'); }
 ?>
