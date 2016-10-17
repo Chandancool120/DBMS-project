@@ -3,7 +3,7 @@
 </head>
 <body>
 	<div>
-  		<form action="dealer.php">
+  		<form action="dealerloginsignup.php">
    		   <input type="Submit" value="dealer">
   		</form>
 
