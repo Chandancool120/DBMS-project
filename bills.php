@@ -5,16 +5,15 @@
 </head>
 <body>
 	<div>
-<<<<<<< HEAD
-  		<form action="dealerloginsignup.php">
-   		   <input type="Submit" value="dealer">
-=======
+
+  	
+
 		<h1><center>E-BILLS</center></h1>
 	</div>
 	<div class="button-container">
-  		<form action="dealer.php">
+  		<form action="dealerloginsignup.php">
    		   <input class="button" type="Submit" value="dealer">
->>>>>>> 1dcbc9cc1f90444d2eeed125ca7b3905e7cf1573
+
   		</form>
 
   		<form action="customer.php">
