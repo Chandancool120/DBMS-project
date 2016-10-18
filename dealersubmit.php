@@ -14,7 +14,7 @@ $operatorname=$_SESSION["operatorname"];
 </div>
 <div>
 	<center>
-        <form method="calc_elec_bill.php" mwthod="post">
+        <form action="calc_elec_bill.php" method="post">
         	<table>
         		<tr>
         			<th><b>Service no:</b></th>
