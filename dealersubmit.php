@@ -1,3 +1,7 @@
+<?php
+session_start();
+$operatorname=$_SESSION["operatorname"];
+?>
 <html>
 <head>
 <title>dealer</title>
@@ -5,7 +9,7 @@
 </head>
 <body>
 <div>
-	<h1><center>Welcome shc</center></h1>
+	<h1><center>Welcome <?php echo $operatorname; ?></center></h1>
 
 </div>
 <div>

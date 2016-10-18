@@ -1,4 +1,6 @@
 <?php
+
+
 if(isset($_POST['submit']))
 {
 	$username=$_POST["username"];
@@ -23,12 +25,15 @@ if(isset($_POST['submit']))
 		'$postal'
 		 )";
 if ($connect->query($sql) === TRUE) {
-    echo "New record created successfully";
-    <form action="dealer.php">
-   		   
-  		</form>
+	echo '<script>
+	if(confirm("succe"))
+		window.location.href="dealerloginsignup.php";
+	</script>';
+    //header('Location:dealerloginsignup.php');
+    
+    
 } else {
-	echo "error";
+	echo "Username already exists.Select different username";
 	}
 }
 }
@@ -43,13 +48,13 @@ SIGNUP
 	<body>
 		<div>
 		<form action="dealersignup.php" method="post">
-		Name:<input type="text" name="name">
-		Username:<input type="text" name="username">
-		Area:<input type="text" name="area">
-		Postal code:<input type="text" name="postal">
-		Phone Number:<input type="text" name="phno">
-		Password:<input type="text" name="password">
-		Re-enter Password:<input type="text" name="password2">
+		Name:<input type="text" name="name"><br>
+		Username:<input type="text" name="username"><br>
+		Area:<input type="text" name="area"><br>
+		Postal code:<input type="text" name="postal"><br>
+		Phone Number:<input type="text" name="phno"><br>
+		Password:<input type="text" name="password"><br>
+		Re-enter Password:<input type="text" name="password2"><br>
 		<input type="Submit" name="submit">
 		</form>
 

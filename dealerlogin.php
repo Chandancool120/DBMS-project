@@ -8,20 +8,19 @@ if(isset($_POST['submit']))
 	$username=$_POST["username"];
 	$password=$_POST["password"];
 	global $mysqli;
-	$check=" SELECT * FROM dealer_login WHERE username='$username' AND password='$password' ";
+	$check=" SELECT name FROM dealer_login WHERE username='$username' AND password='$password' ";
 	//$check_q = $conn->query($check);
 	$check_q=$connect->query($check);
 	//$check_q=mysql_query($check);
 	
 	if(mysqli_num_rows($check_q)==1){
-		echo "successfull";
+		$row=mysqli_fetch_assoc($check_q);
+		$name=$row['name'];
+		$_SESSION["operatorname"]=$name;
+		header("Location:dealersubmit.php");
 	}
 	else
 		echo "wrong details" ;
 
 }
-else{
-echo "no data";
-}
-
 ?>
