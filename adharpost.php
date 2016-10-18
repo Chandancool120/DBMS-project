@@ -5,6 +5,7 @@ $password = "";
 $dbname = "person_details";
 $adharno='';
 $name=$_POST["name"];
+$photoproof=$_POST["photo_proof"];
 $fname=$_POST["fname"];
 $sex=$_POST["sex"];
 $dob=$_POST["dob"];
@@ -25,9 +26,10 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "INSERT INTO person(adharno,name,fname,sex,dob,dob_proof,doorno,street,city,landmark,postalcode,add_proof) 
+$sql = "INSERT INTO person(adharno,name,photo_proof,fname,sex,dob,dob_proof,doorno,street,city,landmark,postalcode,add_proof) 
 VALUES ('$adharno',
 		'$name',
+		'$photoproof',
 		'$fname',
 		'$sex',
 		'$dob',

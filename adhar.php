@@ -9,13 +9,16 @@
 		<h1><center>ADHAR FORM</center></h1>
 	</div>
 	<div>
-<form action="post.php" method="post">
+<form action="adharpost.php" method="post">
 	<table>
 		<tr>
 			<td><b>Name:</b> </td>
 			<td><input type="text" name="name"></td>
 		</tr>
-
+		<tr>
+			<td><b>My photo</b></td>
+			<td><input type="file" name="photo_proof"></td>
+		</tr>
 		<tr>
 			<td><b>Father Name:</b></td>
 			<td><input type="text" name="fname"></td>
@@ -71,6 +74,7 @@
 			<td><b>Address proof:</b></td>
 			<td><input type="file" name="add_proof"></td>
 		</tr>
+
 	</table>
 <br><br>
 <input type="submit" value="click here"></input>
