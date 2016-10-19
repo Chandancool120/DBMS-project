@@ -8,7 +8,7 @@
 	<div><center><h1>Customer </h1></center></div>
 	<div>
    	<center>
-   	<form >
+   	<form action="customerdisplay.php" method="post">
 
 		<table>
  	    	<tr>	

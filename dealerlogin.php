@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+echo date('n');
 if(isset($_POST['submit']))
 {
 	$connect = new mysqli('localhost','root','','dealer_login');

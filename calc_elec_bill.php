@@ -21,39 +21,38 @@ if(mysqli_num_rows($check))
 	$charge=$row['charge'];
 }
 echo $charge;
-/*if ($units <200 )
-	$charge = 1.20;
-   else	if ($units>=200 && $units<400)
-		$charge = 1.60;
-	else if ($units>=400 && $units<600)
-			$charge = 2.00;
-		else
-			$charge = 2.50;
-   $amt = $units*$charge;
-   if ($amt>300)
-   $total_amt = $amt+$amt*15/100.0;
+if ($units <200 ){
+	$total_amt=$units*$charge;
+	$total_amt=$total_amt+($total_amt*5/100);
+	}
+   else	if ($units>=200 && $units<400){
+		$total_amt=$units*$charge;
+	$total_amt=$total_amt+($total_amt*10/100);
+   }
+	else if ($units>=400 && $units<600){
+	$total_amt=$units*$charge;
+	$total_amt=$total_amt+($total_amt*15/100);
+	}
+	else{
+	$total_amt=$units*$charge;
+	$total_amt=$total_amt+($total_amt*25/100);
+	}
    if ($total_amt  < 25)
 	$total_amt =25;
 
-echo "$total_amt and $servicenum";*/
+$connect->close();
+$connect =new mysqli($localhost,$username,$password,$database);
+//$bill_num='';
+$status="Not_Paid";
+$sql="INSERT INTO Oct(service_num,units,amount,status) VALUES('$service_num','$units','$total_amt','$status')";
+//$check=$connect->query($sql);
 
-$bill_num='';
-$amount;
-$sql="INSERT INTO Oct(bill_num,service_num,units,amount) VALUES('$bill_num','$servicenum','$units','$amount')";
-$check=$connect->query($sql);
-
-if($check->connect_error)
+/*if($check->connect_error)
 {
-	die('connection error'.$check->connect_error)
-}
+	die('connection error'.$check->connect_error);
+}*/
 if($connect->query($sql)===TRUE)
  echo "data entered succesfully";
 else echo "date is not entered";
-
-/** if unit <200 then charge are @ Rs. 1.20 per unit
-   if unit >=200 but <400 then charge are @ Rs. 1.60 per unit
-   if unit >=400 but <600 then charge are @ Rs. 2.00 per unit
-   if unit >=600 then charge are @ Rs. 2.50 per unit
-   If bill exceed Rs. 300 then a surcharge of 15% will be charged
-   and minimum bill should be of Rs. 25/-. **/
+$connect-> close();
    ?>

@@ -43,19 +43,54 @@ if ($connect->query($sql) === TRUE) {
 <html>
 <center>
 <head>
-SIGNUP
+<link rel="stylesheet" type="text/css" href="style1.css">
+<title>Dealer-Signup</title>
+
 </head>
 	<body>
+	<div>
+		<h1><center>Dealer-Signup</center></h1>
+	</div>
 		<div>
 		<form action="dealersignup.php" method="post">
-		Name:<input type="text" name="name"><br>
-		Username:<input type="text" name="username"><br>
-		Area:<input type="text" name="area"><br>
-		Postal code:<input type="text" name="postal"><br>
-		Phone Number:<input type="text" name="phno"><br>
-		Password:<input type="text" name="password"><br>
-		Re-enter Password:<input type="text" name="password2"><br>
-		<input type="Submit" name="submit">
+		<table>
+			<tr>
+				<th><b>Name:</b></th>
+				<th><input type="text" name="name"></th>
+			</tr>
+
+			<tr>
+				<th>Username:</th>
+				<th><input type="text" name="username"></th>
+			</tr>
+
+			<tr>
+				<th>Area:</th>
+				<th><input type="text" name="area"><br></th>
+			</tr>
+
+			<tr>
+				<th>Postal code:</th>
+				<th><input type="text" name="postal"><br></th>
+			</tr>
+
+			<tr>
+				<th>Phone Number:</th>
+				<th><input type="text" name="phno"></th>
+			</tr>
+
+			<tr>
+				<th>Password:</th>
+				<th><input type="text" name="password"></th>
+			</tr>
+
+			<tr>
+				<th>Re-enter Password:</th>
+				<th><input type="text" name="password2"></th>
+			</tr>
+		</table>
+		
+		<input class="button" type="Submit" name="submit">
 		</form>
 
 			</center>

@@ -12,8 +12,13 @@
 {
 	display: inline;
 }
+table
+{
+    border-collapse: collapse;
+}
 tr,td
 {
+    border:1;
 	padding: 5px;
     text-align: left;
     border: 1px solid;
