@@ -58,7 +58,8 @@ if($status0==='Not_Paid')
 $total_amount=$amount+$amount0;
 else
 $total_amount=$amount;
-
+$sql3="drop view view1";
+$check3=$connect->query($sql3);
 ?>
 
 
@@ -174,6 +175,11 @@ $total_amount=$amount;
 		  <textarea>Amount is calculated not only on the basis of unit charge but also on units consumed.</textarea>
 		</div>
 	
+	</div>
+	<div>
+		<form action="genpdf.php">
+			<input type="submit" value="Generate pdf ">
+		</form>
 	</div>
 		
 </body>

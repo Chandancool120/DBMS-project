@@ -19,6 +19,9 @@
   		<form action="customer.php">
     	   <input class="button" type="Submit" value="customer">
   		</form>
+  		<form action="adminlogin.php">
+    	   <input class="button" type="Submit" value="Admin login">
+  		</form>
 	</div>
 </body>
 </html>
