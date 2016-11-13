@@ -1,4 +1,13 @@
-<?php
+
+<html>
+<head>
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<h1><center>Dealer Details</center></h1>
+	</body>
+	</html>
+	<?php
 session_start();
 
 if(isset($_POST['submit']))
@@ -18,8 +27,19 @@ if(isset($_POST['submit']))
 	//$check_q = $conn->query($check);
 		$check1_q=$connect->query($check1);
 		$num=mysqli_num_rows($check1_q);
-		
-		echo "<table border='1'>";
+		echo "<div class='container'>";
+		echo "<div class='row'>";
+		echo "<table class='col-md-12 table-bordered table-striped table-condensed cf'>";
+		echo "<tr>";
+		    echo "<td ><b>Name</b></td>";
+		    echo "<td><b>Username</b></td>";
+		    echo "<td><b>Area</b></td>";
+		    echo "<td><b>Ph_num</b></td>";
+		    echo "<td><b>Postal</b></td>";
+		    //echo "<td><a href='delete.php ?id=".$username" ' >Delete row</a> </td>";
+		    echo "<td><b>Option</b></td>";
+
+		    echo "</tr>";
 		while ($row1 = mysqli_fetch_row($check1_q))
 		 {
 		 	$name=$row1[2];
@@ -39,6 +59,8 @@ if(isset($_POST['submit']))
 		    echo "</tr>";
          }
          echo "</table>";
+         echo "</div>";
+         echo "</div>";
 
  
  	}
