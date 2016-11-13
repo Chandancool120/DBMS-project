@@ -11,7 +11,7 @@ if($connect->connect_error)
 {
   die('connect_error'.$connect->connect_error);
 }
-$var=date('n')-1;
+$var=date('n');
 $var0=$var-1;
 $sql="select * from unit_info where month=$var";
 $sql0="select * from unit_info where month=$var0";
@@ -54,13 +54,10 @@ if(mysqli_num_rows($check1))
   $status0=$row2['status'];
   //echo $name.$amount ;
 }
+if($status0==='Not_Paid')
 $total_amount=$amount+$amount0;
-if($status0==='Not_Paid'&&$status==='Not_Paid')
-$total=$total_amount;
-else{
-$total=0;
-$amountpaid=$total_amount;
-}
+else
+$total_amount=$amount;
 $sql3="drop view view1";
 $check3=$connect->query($sql3);
 ?>
@@ -163,12 +160,12 @@ $check3=$connect->query($sql3);
 		      <td colspan="3" class="blank"> </td>
 		      <td colspan="2" class="total-line">Amount Paid</td>
 
-		      <td class="total-value"><?php echo $amountpaid?></td>
+		      <td class="total-value">0.00</td>
 		  </tr>
 		  <tr>
 		      <td colspan="3" class="blank"> </td>
 		      <td colspan="2" class="total-line balance">Balance Due</td>
-		      <td class="total-value balance"><div class="due"><?php echo "<b>$total</b>"?></div></td>
+		      <td class="total-value balance"><div class="due"><?php echo "<b>$total_amount</b>"?></div></td>
 		  </tr>
 		
 		</table>
@@ -184,8 +181,7 @@ $check3=$connect->query($sql3);
 			<input type="submit" value="Generate pdf ">
 		</form>
 		<form action="paybill.php">
-		<input type="hidden" name="servicenum" value="<?php echo $servicenum; ?>">
-   <input type="submit" value="paybill">
+			<input type="submit" value="Pay Bill! ">
 		</form>
 	</div>
 		

@@ -1,6 +1,6 @@
 <?php
-$servicenum=$_POST["servicenum"];
-
+$servicenum=$_GET["servicenum"];
+echo "$servicenum";
 $localhost="localhost";
 $username="root";
 $password="";
@@ -11,7 +11,10 @@ if($connect->connect_error)
 {
   die('connect_error'.$connect->connect_error);
 }
-$var=date('n')-1;
+$var=date('n');
+echo $var;
+$var=$var-1;
+
 $var0=$var-1;
 $sql="select * from unit_info where month=$var";
 $sql0="select * from unit_info where month=$var0";
@@ -27,6 +30,10 @@ if($check=$connect->query($sql))
 	$unitcharge0=$row0['charge'];
 	//echo "$month ,$unitcharge";
 }
+$sql4="update oct set status='Paid' where service_num=$servicenum";
+$sql5="update sept set status='Paid' where service_num=$servicenum";
+$connect->query($sql4);
+$connect->query($sql5);
 
 $sql="create view view1 as select * from userdetails where service_no=$servicenum" ;
 //$sql="select * from userdetails where service_no=$servicenum" ;
@@ -182,10 +189,6 @@ $check3=$connect->query($sql3);
 	<div>
 		<form action="genpdf.php">
 			<input type="submit" value="Generate pdf ">
-		</form>
-		<form action="paybill.php">
-		<input type="hidden" name="servicenum" value="<?php echo $servicenum; ?>">
-   <input type="submit" value="paybill">
 		</form>
 	</div>
 		
