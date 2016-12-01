@@ -5,32 +5,50 @@ $operatorname=$_SESSION["operatorname"];
 <html>
 <head>
 <title>dealer</title>
-<link rel="stylesheet" type="text/css" href="style1.css">
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<style type="text/css">
+hr{
+    border-color: black;
+}
+</style>
 </head>
 <body>
+
+    <div class="container bg-danger" >
+    <div class="row">
+    <div class="col-md-6 col-md-offset-3">
 <div>
 	<h1><center>Welcome <?php echo $operatorname; ?></center></h1>
+    <form action="dealerloginsignup.php">
+<input type="submit" align="right" class="btn btn-danger" value="Logout" >
+    </form>
+    
+    <hr>
 
 </div>
 <div>
 	<center>
         <form action="calc_elec_bill.php" method="post">
-        	<table>
+        	<table class="table table-bordered table-condensed" border="1">
         		<tr>
-        			<th><b>Service no:</b></th>
-        			<th><input type="text" name="servicenum" placeholder="enter Service number"></th>
+        			<th><center><b>Service no:</b></center></th>
+        			<th><input type="text" name="servicenum" required></th>
         		</tr>
         		<tr>
-        			<th><b>Units:</b></th>
-        			<th><input type="text" name="units" placeholder="enter units"></th>
+        			<th><center><b>Units:</b></center></th>
+        			<th><input type="text" name="units" required ></th>
         		</tr>
         	</table>
        			
        			
-       			<input class="button" type="submit" value="Submit">
+       			<input class="btn btn-success" type="submit" value="Submit">
         </form>	
 	</center>
 </div>
+
+    </div>
+</div >
+    </div>
 </body>
 </html>
 

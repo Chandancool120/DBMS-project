@@ -3,7 +3,7 @@ $(document).ready(function()
 
 $.ajax(
 {
-	url :"http://localhost/DBMS-project/unit.php",
+	url :"http://localhost/DBMS-project/unti1.php",
 	type:"GET",
 
 
@@ -55,7 +55,7 @@ $.ajax(
 		var ctx=document.getElementById("mycanvas");
 
 		var Linegraph= new Chart(ctx,{
-        type: 'bar',
+        type: 'line',
     data: chardata
     
 		})

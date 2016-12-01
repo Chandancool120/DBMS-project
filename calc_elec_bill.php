@@ -20,7 +20,7 @@ if(mysqli_num_rows($check))
 	$row=mysqli_fetch_assoc($check);
 	$charge=$row['charge'];
 }
-echo $charge;
+
 if ($units <200 ){
 	$total_amt=$units*$charge;
 	$total_amt=$total_amt+($total_amt*5/100);
@@ -51,8 +51,39 @@ $sql="INSERT INTO Oct(service_num,units,amount,status) VALUES('$service_num','$u
 {
 	die('connection error'.$check->connect_error);
 }*/
-if($connect->query($sql)===TRUE)
- echo "data entered succesfully";
-else echo "date is not entered";
+
 $connect-> close();
    ?>
+
+   <html>
+<head>
+	<title>customer </title>
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	
+
+</head>
+<body >
+	<div class="container bg-danger">
+	<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+
+<center>
+
+
+
+		<h1> Data Entered Succesfully 
+	</h1><br>
+	<h3> Do you want to enter again?</h3>
+	<form action="dealersubmit.php">
+<input type = "submit" class="btn btn-success" value="Yes">
+</form>
+<form action="bills.php">
+<input type = "submit" class="btn btn-danger" value="No">
+</form>
+</center>
+	</div>
+	</div>
+	</div>
+
+</body>
+</html>

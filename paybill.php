@@ -1,6 +1,6 @@
 <?php
 $servicenum=$_GET["servicenum"];
-echo "$servicenum";
+
 $localhost="localhost";
 $username="root";
 $password="";
@@ -12,7 +12,7 @@ if($connect->connect_error)
   die('connect_error'.$connect->connect_error);
 }
 $var=date('n');
-echo $var;
+
 $var=$var-1;
 
 $var0=$var-1;
@@ -80,6 +80,19 @@ $check3=$connect->query($sql3);
 	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
 	
 	<title>Customer Invoice</title>
+	<style type="text/css">
+.button {
+    background-color: #000000; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+	</style>
+	
 	
 	<link rel='stylesheet' type='text/css' href='css/style.css' />
 	<link rel='stylesheet' type='text/css' href='css/print.css' media="print" />
@@ -186,11 +199,7 @@ $check3=$connect->query($sql3);
 		</div>
 	
 	</div>
-	<div>
-		<form action="genpdf.php">
-			<input type="submit" value="Generate pdf ">
-		</form>
-	</div>
+	
 		
 </body>
 

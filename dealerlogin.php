@@ -1,7 +1,7 @@
 <?php
 session_start();
 echo date('n');
-if(isset($_POST['submit']))
+if(isset($_POST['login-submit']))
 {
 	$connect = new mysqli('localhost','root','','dealer_login');
     $select = mysqli_select_db($connect,'dealer_login');

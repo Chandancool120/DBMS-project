@@ -1,27 +1,56 @@
 <html>
 <head>
 	<title>customer </title>
-	<link rel="stylesheet" type="text/css" href="style1.css">
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<style type="text/css">
+hr{
+    border-color: black;
+}
+	</style>
+
 </head>
-<body>
+<body >
+	<div class="container bg-danger">
+	<div class="row">
+	<div class="col-md-6 col-md-offset-3">
 
-	<div><center><h1>Customer </h1></center></div>
+	<div><center><h1>Online Electricity Bill Payment </h1></center></div>
+	<hr>
 	<div>
-   	<center>
-   	<form action="customerdisplay.php" method="post">
 
-		<table>
+
+
+
+
+   	<center>
+
+   	<form action="customerdisplay.php" class="form-group" method="post">
+   		<ul class="errorMessages"></ul>
+
+		<table class="table table-bordered table-striped table-condensed">
+			<br>
  	    	<tr>	
-    	 		<th><b>Service no:</b></th>
-     			<th><input type="text" name="servicenum"></th>
+    	 		<th><center><b>Service no:</b></center></th>
+     			<th><center><input  class="focus" type="text" name="servicenum" required></center></th>
     	 	</tr>
 
   		</table>
-  		<br><br>
-  			<input class="button" type="submit" value="Go">
+  		<br>
+  		
+  		<div class="buttons">
+  			<button class="btn btn-success">Submit</button>
+
+  		</div>
+  		
+  			
 		</form>
 		</center>
 	</div>
+
+	</div>
+</div >
+	</div>
+<!--script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script-->
 
 </body>
 

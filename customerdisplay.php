@@ -1,6 +1,7 @@
 <?php
+session_start();
 $servicenum=$_POST["servicenum"];
-
+$_SESSION["service_num"]=$servicenum;
 $localhost="localhost";
 $username="root";
 $password="";
@@ -73,8 +74,21 @@ $check3=$connect->query($sql3);
 	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
 	
 	<title>Customer Invoice</title>
+	<style type="text/css">
+.button {
+    background-color: #000000; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+	</style>
 	
 	<link rel='stylesheet' type='text/css' href='css/style.css' />
+	
 	<link rel='stylesheet' type='text/css' href='css/print.css' media="print" />
 	<script type='text/javascript' src='js/jquery-1.3.2.min.js'></script>
 	<script type='text/javascript' src='js/example.js'></script>
@@ -180,13 +194,13 @@ $check3=$connect->query($sql3);
 	
 	</div>
 	<div>
-		<form action="genpdf.php">
-			<input type="submit" value="Generate pdf ">
-		</form>
 		<form action="paybill.php">
+
 		<input type="hidden" name="servicenum" value="<?php echo $servicenum; ?>">
-   <input type="submit" value="paybill">
+
+  			 <input type="submit"  class="button" value="paybill" style="float: right";>
 		</form>
+		<a href="unit.php">GRAPH</a>
 	</div>
 		
 </body>

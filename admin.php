@@ -10,7 +10,7 @@
 	<?php
 session_start();
 
-if(isset($_POST['submit']))
+
 {
 	$connect = new mysqli('localhost','root','','dealer_login');
     $select = mysqli_select_db($connect,'dealer_login');
